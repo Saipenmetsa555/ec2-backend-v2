@@ -27,7 +27,9 @@ const port = 4000;
 
 insertInitialUser();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', 
+}));
 
 app.use("/registerDetails", registerTemporaryDetails);
 app.use("/userApprovalAdmin", adminApprovalUsersGet);
